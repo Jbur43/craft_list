@@ -1,0 +1,4 @@
+<h1><%= @post.beer_name %></h1>
+<p>Brewer: <%= @post.brewer %></p>
+<p>City of Origin: <%= @post.city %></p>
+<%= image_tag @post.avatar_url(:thumb).to_s %>
