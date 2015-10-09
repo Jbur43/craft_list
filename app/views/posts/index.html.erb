@@ -1,0 +1,19 @@
+<div class="nav nav-tabs">
+	<li><%= link_to 'Home', root_path %></li>
+	<li><%= link_to 'New Beer', new_post_path %></li>
+</div>
+
+<div class="container">
+	<h1>Full Beer List</h1>
+
+	<ol>
+	<% @posts.each do |post| %>
+		<li>
+			<h3><%= post.beer_name %></h3>
+			<p>Brewer: <%= post.brewer %></p>
+			<p>City of Origin: <%= post.city %></p>
+			<%= image_tag post.avatar_url(:thumb).to_s %>
+		</li>
+	<% end %>
+	</ol>
+</div>

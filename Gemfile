@@ -27,6 +27,8 @@ gem 'carrierwave'
 
 gem 'rmagick', '~> 2.15.4'
 
+gem 'bootstrap-sass'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
