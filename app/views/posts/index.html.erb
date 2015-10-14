@@ -1,12 +1,20 @@
 <div class="nav nav-tabs">
+	<div align='right'>
+		<li><% if current_user %>
+			  Logged in as <%= current_user.email %>.
+			  <%= link_to "Log out", logout_path %>
+			<% end %>
+		</li>
+	</div>
 	<li><%= link_to 'Home', root_path %></li>
 	<li><%= link_to 'New Beer', new_post_path %></li>
+	<li><%= link_to "Sign up", signup_path %><li>
+	<li><%= link_to "Log in", login_path %></li>
 </div>
 
-<div class="container">
-	<h1>Full Beer List</h1>
+<div class="container" align='center'>
+	<h1>The Brian Sankey List</h1>
 
-	<ol>
 	<% @posts.each do |post| %>
 		<li>
 			<h3><%= post.beer_name %></h3>
@@ -15,5 +23,4 @@
 			<%= image_tag post.avatar_url(:thumb).to_s %>
 		</li>
 	<% end %>
-	</ol>
 </div>
